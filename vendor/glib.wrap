@@ -1,0 +1,10 @@
+[wrap-git]
+url=https://gitlab.gnome.org/GNOME/glib.git
+revision=glib-2-84
+checkout=2.84.1
+depth=1
+recurse=true
+
+[provide]
+gobject_dep=gobject-2.0
+dependency_names=gobject-2.0
