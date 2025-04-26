@@ -25,4 +25,5 @@ library('cern_core',
 pkgc = import('pkgconfig')
 
 pkgc.generate(name: 'cern_core',
-  version: meson.project_version())
+  version: meson.project_version(),
+  description: 'Core library for project cern.')
