@@ -18,13 +18,14 @@ cern_core_sources = [
 
 cern_core_include_dirs = include_directories('include/')
 
-library('cern_core',
+libcern_core = library('cern_core',
   cern_core_sources,
   dependencies: cern_core_dependencies,
   include_directories: 'include/',
   install: true, c_args: ['-DCERN_CORE_DLL=1', '-DCERN_CORE_DLL_EXPORTS=1'])
 
 cern_core_dep = declare_dependency(include_directories: cern_core_include_dirs,
+  link_with: libcern_core,
   dependencies: cern_core_dependencies)
 
 if not meson.is_subproject()
