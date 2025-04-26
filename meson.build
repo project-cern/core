@@ -1,4 +1,4 @@
-project('cern core', 'c',
+project('cern_core', 'c',
   version: '0.1',
   default_options : ['warning_level=3', 'c_std=c23'],
   subproject_dir: 'vendor')
@@ -22,3 +22,7 @@ library('cern_core',
   include_directories: 'include/',
   install: true, c_args: ['-DCERN_CORE_DLL=1', '-DCERN_CORE_DLL_EXPORTS=1'])
 
+pkgc = import('pkgconfig')
+
+pkgc.generate(name: 'cern_core',
+  version: meson.project_version())
